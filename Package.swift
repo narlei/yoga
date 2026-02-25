@@ -13,20 +13,17 @@ import PackageDescription
 let package = Package(
     name: "yoga",
     products: [
-        .library(name: "yoga", targets: [ "core" ])
+        .library(name: "yoga", targets: ["core"])
     ],
     targets: [
         .target(
             name: "core",
-            path: ".",
-            sources: [
-                "yoga"
-            ],
+            path: "yoga",
             publicHeadersPath: ".",
             cxxSettings: [
                 .headerSearchPath(".")
             ]
         )
     ],
-    cxxLanguageStandard: CXXLanguageStandard(rawValue: "c++20")
+    cxxLanguageStandard: .cxx20
 )
