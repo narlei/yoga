@@ -21,7 +21,8 @@ let package = Package(
             path: "yoga",
             publicHeadersPath: ".",
             cxxSettings: [
-                .headerSearchPath(".")
+                .headerSearchPath("."),
+                .headerSearchPath("..")   // para #include <yoga/...>
             ]
         )
     ],
