@@ -13,16 +13,18 @@ import PackageDescription
 let package = Package(
     name: "yoga",
     products: [
-        .library(name: "yoga", targets: ["core"])
+        .library(name: "yoga", targets: [ "core" ])
     ],
     targets: [
         .target(
             name: "core",
-            path: "yoga",
+            path: ".",
+            sources: [
+                "yoga"
+            ],
             publicHeadersPath: ".",
             cxxSettings: [
-                .headerSearchPath("."),
-                .headerSearchPath("..")   // para #include <yoga/...>
+                .headerSearchPath(".")
             ]
         )
     ],
